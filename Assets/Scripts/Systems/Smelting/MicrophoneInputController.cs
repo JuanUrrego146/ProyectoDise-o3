@@ -118,7 +118,7 @@ namespace LingoteRush.Systems.Smelting
                 hasValidMicrophone = false;
                 currentRawLevel = 0f;
                 currentNormalizedLevel = 0f;
-                SetStatus("Waiting for microphone");
+                SetStatus("Esperando microfono");
                 return;
             }
 
@@ -229,7 +229,7 @@ namespace LingoteRush.Systems.Smelting
             if (string.IsNullOrWhiteSpace(deviceName))
             {
                 hasValidMicrophone = false;
-                SetStatus("Waiting for microphone");
+                SetStatus("Esperando microfono");
                 return;
             }
 
@@ -240,7 +240,7 @@ namespace LingoteRush.Systems.Smelting
                 hasValidMicrophone = false;
                 currentRawLevel = 0f;
                 currentNormalizedLevel = 0f;
-                SetStatus("Could not start microphone capture.");
+                SetStatus("No se pudo iniciar la captura del microfono.");
                 return;
             }
 
@@ -249,7 +249,7 @@ namespace LingoteRush.Systems.Smelting
             var clipSampleCount = microphoneClip.samples > 0 ? microphoneClip.samples : sampleWindow;
             sampleBuffer = new float[Mathf.Clamp(sampleWindow, 64, clipSampleCount)];
             nextDebugLogTime = Time.unscaledTime;
-            SetStatus($"Microphone active: {selectedDevice}");
+            SetStatus($"Microfono activo: {selectedDevice}");
         }
 
         private void StopCapture()
@@ -277,7 +277,7 @@ namespace LingoteRush.Systems.Smelting
                 hasValidMicrophone = false;
                 currentRawLevel = 0f;
                 currentNormalizedLevel = 0f;
-                SetStatus("Microphone capture stopped.");
+                SetStatus("La captura del microfono se detuvo.");
                 return;
             }
 

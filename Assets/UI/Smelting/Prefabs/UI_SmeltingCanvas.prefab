@@ -231,7 +231,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Microphone
+  m_Text: Microfono
 --- !u!1 &759711873878848581
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,7 +382,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Device
+  m_Text: Dispositivo
 --- !u!1 &2751185748199538338
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,7 +611,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Waiting for microphone
+  m_Text: Esperando microfono
 --- !u!1 &5391530063982374316
 GameObject:
   m_ObjectHideFlags: 0
@@ -1105,7 +1105,7 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Microphone
+    - m_Text: Microfono
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:

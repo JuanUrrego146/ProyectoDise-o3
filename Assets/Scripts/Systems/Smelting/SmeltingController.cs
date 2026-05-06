@@ -187,7 +187,7 @@ namespace LingoteRush.Systems.Smelting
             if (activeCarrier == null)
             {
                 Debug.LogWarning("Persistent Bowl 2 was not found in Scene_Smelting.", this);
-                SetStatus("Bowl 2 was not found from Scene_Extraction.");
+                SetStatus("No se encontro Bowl 2 desde Scene_Extraction.");
                 yield break;
             }
 
@@ -200,7 +200,7 @@ namespace LingoteRush.Systems.Smelting
             activeCarrier.transform.rotation = entryPoint.rotation;
             Debug.Log("Persistent Bowl 2 placed at entry point", activeCarrier);
 
-            SetStatus("Moving Bowl 2 into the furnace...");
+            SetStatus("Moviendo Bowl 2 hacia el horno...");
 
             if (moveDuration > 0f)
             {
@@ -224,7 +224,7 @@ namespace LingoteRush.Systems.Smelting
             activeCarrier.transform.rotation = insideTarget.rotation;
 
             smeltingActive = true;
-            SetStatus("Blow to keep the heat up");
+            SetStatus("Sopla para mantener el calor");
         }
 
         private void CacheVisualDefaults()
@@ -310,7 +310,7 @@ namespace LingoteRush.Systems.Smelting
         {
             if (entryPoint == null || insideTarget == null)
             {
-                SetStatus("Assign CrucibleEntryPoint and CrucibleInsideTarget in the Inspector.");
+                SetStatus("Asigna CrucibleEntryPoint y CrucibleInsideTarget en el Inspector.");
                 return false;
             }
 
@@ -518,17 +518,17 @@ namespace LingoteRush.Systems.Smelting
         {
             if (!hasMicrophone)
             {
-                SetStatus("Waiting for microphone");
+                SetStatus("Esperando microfono");
                 return;
             }
 
             if (smeltingProgress < 1f && micDriveLevel < micThresholdForMelting)
             {
-                SetStatus($"Keep the mic bar above {Mathf.RoundToInt(micThresholdForMelting * 100f)}%");
+                SetStatus($"Mantén la barra del microfono por encima de {Mathf.RoundToInt(micThresholdForMelting * 100f)}%");
                 return;
             }
 
-            SetStatus($"Melting... {Mathf.RoundToInt(smeltingProgress * 100f)}%");
+            SetStatus($"Fundiendo... {Mathf.RoundToInt(smeltingProgress * 100f)}%");
         }
 
         private void CompleteSmelting()
@@ -538,7 +538,7 @@ namespace LingoteRush.Systems.Smelting
             currentSmeltingProgress = 1f;
             UpdateUi(1f, microphoneInput != null ? microphoneInput.CurrentNormalizedLevel : 0f);
             UpdateHeatDrivenVisuals(1f, 1f, 1f);
-            SetStatus("Melting complete");
+            SetStatus("Fundicion completada");
         }
 
         private void AttachMoltenGoldVisualToCarrier()
